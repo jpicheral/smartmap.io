@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation automatique de cartes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #555;
+            text-align: justify;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            color: #444;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fdfdfd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 12px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        strong {
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Installation automatique de cartes</h1>
+        <p>
+            Pour installer les cartes, cliquez sur le bouton depuis votre téléphone 
+            (il faut que Locus Map ou Cartograph Map soit déjà installé sur le téléphone).
+        </p>
+        <div class="card">
+            <h2>Cartes de base</h2>
+            <ul>
+                <li><strong>France - IGN :</strong> scan topo, plan, orthophoto, pente, iti skirando</li>
+                <li><strong>Suisse - Swisstopo :</strong> scan topo, pente, iti ski, iti VTT, iti pédestre, arrêt TP</li>
+                <li><strong>Espagne :</strong> scan topo, orthophoto</li>
+                <li><strong>Autriche :</strong> scan topo</li>                
+                <li><strong>Monde - Google :</strong> plan, satellite, vélo</li>
+                <li><strong>Monde - WayMarkedTrail OSM :</strong> surcouche itinéraire pédestre, vélo, VTT, cheval, ski piste, roller</li>
+                <li><strong>Monde - Bing :</strong> ortho</li>
+            </ul>
+            <a href="locus-actions://http://jpicheral.free.fr/smartcarto/file/downloadBasicMapLocus.xml" class="button">Installer les cartes de base sur Locus</a>
+            <a href="cartograph-s://raw.githubusercontent.com/jpicheral/smartmap/refs/heads/main/cartograph/BasicMapCartograph.onlinemap" class="button">Installer les cartes de base sur Cartograph</a>
+        </div>
+        <div class="card">
+            <h2>Cartes d'activité de Strava</h2>
+            <a href="locus-actions://http://jpicheral.free.fr/smartcarto/file/downloadStravaMapLocus.xml" class="button">Installer les cartes Strava sur Locus</a>
+            <a href="cartograph-s://raw.githubusercontent.com/jpicheral/smartmap/refs/heads/main/cartograph/StravaMapCartograph.onlinemap" class="button">Installer les cartes Strava sur Cartograph</a>
+        </div>
+        </body>
+</html>
