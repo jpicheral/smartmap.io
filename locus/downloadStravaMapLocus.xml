@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locusActions>
+  <download>
+	<source>    
+		<![CDATA[http://jpicheral.free.fr/smartcarto/file/StravaLocusMap.xml]]>
+    </source>
+    <dest><![CDATA[/mapsOnline/custom/BasicLocusMap.xml]]></dest>
+	<after>refreshMap</after>
+  </download>
+</locusActions>

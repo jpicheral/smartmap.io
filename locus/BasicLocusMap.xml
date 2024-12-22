@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+=== BasicLocusMap ====
+Uniquement les cartes les plus courantes :
+- France - IGN  : plan, ortophoto, pente, scan, iti skirando
+- Suisse - Swisstopo : topo, pente, iti ski, iti VTT
+- Espagne - IGN : topo, ortophoto
+- Monde - Google : plan, satellite, vélo
+- Monde - WayMarkedTrail OSM : surcouche itinéraire pédestre, Vélo, VTT, cheval, ski piste, roller
+- Monde - Bing : ortho
+
+Doc de réf pour la syntaxe de ce fichier : https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
+-->
+
+<providers>  
+	<!-- GEOPORTAIL IGN (France)-->
+	<provider id="1100" type="0" visible="true" background="-1">
+		<name>IGN</name>
+		<mode>Carte</mode>
+		<url><![CDATA[https://data.geopf.fr/private/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&apikey=ign_scan_ws&LAYER=GEOGRAPHICALGRIDSYSTEMS.MAPS&STYLE=normal&FORMAT=image/jpeg&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}.jpg]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>France</countries>
+		<usage>hiking,cycling</usage>
+	</provider>
+
+	<provider id="1102" type="0" visible="true" background="-1">
+		<name>IGN</name>
+		<mode>Orthophoto</mode>
+		<url><![CDATA[https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&TILEMATRIXSET=PM&STYLE=normal&FORMAT=image/jpeg&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>France</countries>
+		<usage>photo</usage>
+	</provider>			
+
+	<provider id="1104" type="0" visible="true" background="-1">
+		<name>IGN</name>
+		<mode>Plan</mode>
+		<url><![CDATA[https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&TILEMATRIXSET=PM&STYLE=normal&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>France</countries>
+		<usage>city, road</usage>
+	</provider>		
+
+	<provider id="1110" type="0" visible="true" background="-1">
+		<name>IGN</name>
+		<mode>Pentes</mode>
+		<url><![CDATA[https://data.geopf.fr/wmts?Layer=GEOGRAPHICALGRIDSYSTEMS.SLOPES.MOUNTAIN&Style=normal&TileMatrixSet=PM&SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>France</countries>
+		<usage>overlay, hiking</usage>
+	</provider>	   
+
+	<provider id="1111" type="0" visible="true" background="-1">
+		<name>iti ski</name>
+		<mode>itineraire</mode>
+		<url><![CDATA[https://data.geopf.fr/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&TileMatrixSet=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&Layer=TRACES.RANDO.HIVERNALE&FORMAT=image/png&Style=normal]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>France</countries>
+		<usage>overlay, hiking</usage>
+	</provider>	   
+
+	<provider id="1112" type="0" visible="true" background="1100">
+		<name>IGN</name>
+		<mode>Carte+Iti</mode>
+		<url><![CDATA[https://data.geopf.fr/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&TileMatrixSet=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&Layer=TRACES.RANDO.HIVERNALE&FORMAT=image/png&Style=normal]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>France</countries>
+		<usage>overlay, hiking</usage>
+	</provider>
+
+	<provider id="1113" type="0" visible="true" background="1112">
+		<name>IGN</name>
+		<mode>Carte+Iti+Pente</mode>
+		<url><![CDATA[https://data.geopf.fr/wmts?Layer=GEOGRAPHICALGRIDSYSTEMS.SLOPES.MOUNTAIN&Style=normal&TileMatrixSet=PM&SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>France</countries>
+		<usage>overlay, hiking</usage>
+	</provider>
+
+	<!-- SWISSTOPO (Suisse) -->
+	<provider id="1200" type="0" visible="true" background="-1">
+		<name>SwissTopo</name>
+		<mode>Carte</mode>
+		<url><![CDATA[http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>hiking,cycle</usage>
+	</provider>
+
+	<provider id="1201" type="0" visible="true" background="1200">
+		<name>SwissTopo</name>
+		<mode>Carte+iti ski</mode>
+		<url><![CDATA[https://wmts101.geo.admin.ch/1.0.0/ch.swisstopo-karto.skitouren/default/current/3857/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>hiking</usage>
+	</provider>
+	
+	<provider id="1202" type="0" visible="true" background="1200">
+		<name>SwissTopo</name>
+		<mode>Carte+Pente</mode>
+		<url><![CDATA[http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.hangneigung-ueber_30/default/current/3857/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>hiking</usage>
+	</provider>
+
+	<provider id="1203" type="0" visible="true" background="1201">
+		<name>SwissTopo</name>
+		<mode>Carte+Pente+iti ski</mode>
+		<url><![CDATA[http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.hangneigung-ueber_30/default/current/3857/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>hiking</usage>
+	</provider>
+
+	<provider id="1210" type="0" visible="true" background="-1">
+		<name>SwissTopo</name>
+		<mode>Pentes</mode>
+		<url><![CDATA[http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.hangneigung-ueber_30/default/current/3857/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>overlay</usage>
+	</provider>
+
+	<provider id="1211" type="0" visible="true" background="-1">
+		<name>SwissTopo</name>
+		<mode>Itinéraire ski</mode>
+		<url><![CDATA[https://wmts101.geo.admin.ch/1.0.0/ch.swisstopo-karto.skitouren/default/current/3857/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>overlay</usage>
+	</provider>	
+
+	<provider id="1213" type="0" visible="true" background="-1">
+		<name>SwissTopo</name>
+		<mode>Itinéraire pédestre</mode>
+		<url><![CDATA[https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/current/3857/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>overlay,hiking</usage>
+	</provider>
+
+	<provider id="1214" type="0" visible="true" background="-1">
+		<name>SwissTopo</name>
+		<mode>Itinéraire VTT</mode>
+		<url><![CDATA[https://wmts10.geo.admin.ch/1.0.0/ch.astra.mountainbikeland/default/current/3857/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>overlay,cycle</usage>
+	</provider>
+
+	<provider id="1215" type="0" visible="true" background="-1">
+		<name>SwissTopo</name>
+		<mode>Arret transport en commun</mode>
+		<url><![CDATA[https://wmts100.geo.admin.ch/1.0.0/ch.bav.haltestellen-oev/default/current/3857/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Suisse</countries>
+		<usage>overlay,transport</usage>
+	</provider>
+	
+	
+
+	<!-- IGN (Espagne) -->
+	<provider id="1300" type="0" visible="true" background="-1">
+		<name>IGN Espagne</name>
+		<mode>Carte</mode>
+		<url><![CDATA[https://ign.es/wmts/mapa-raster?layer=MTN&style=default&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image/jpeg&&TileMatrix={z}&TileCol={x}&TileRow={y}]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Espagne</countries>
+		<usage>hiking, cycle</usage>
+	</provider>
+	<provider id="1301" type="0" visible="true" background="-1">
+		<name>IGN Espagne</name>
+		<mode>Orthophoto</mode>
+		<url><![CDATA[https://www.ign.es/wmts/pnoa-ma?layer=OI.OrthoimageCoverage&style=default&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image/jpeg&&TileMatrix={z}&TileCol={x}&TileRow={y}]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Espagne</countries>
+		<usage>photo</usage>
+	</provider>
+
+
+	<!-- (Autriche) -->
+	<provider id="1400" type="0" visible="true" background="-1">
+		<name>Autriche</name>
+		<mode>Carte</mode>
+		<url><![CDATA[https://maps.bev.gv.at/tiles/karte/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>Autriche</countries>
+		<usage>hiking, cycle</usage>
+	</provider>
+
+
+	<!-- GOOGLE maps  -->
+	<provider id="10020" type="0" visible="true" background="-1">
+	<name>Google</name>
+		<mode>Plan</mode>
+		<url><![CDATA[http://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}]]></url>
+		<serverPart>0;1;2;3</serverPart>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<attribution><![CDATA[(c)2015 Google - Map data]]></attribution>
+		<extraHeader><![CDATA[User-Agent#Mozilla/5.0 (Windows NT 6.3; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0]]></extraHeader>
+		<extraHeader><![CDATA[Referer#http://www.google.com/maps/]]></extraHeader>
+		<usage>road,city</usage>
+	</provider>
+	<provider id="10021" type="0" visible="true" background="-1">
+		<name>Google</name>
+		<mode>Satellite</mode>
+		<url><![CDATA[http://mt{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}]]></url>
+		<serverPart>0;1</serverPart>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>28</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<attribution><![CDATA[(c)2015 Google - Map data]]></attribution>
+		<extraHeader><![CDATA[User-Agent#Mozilla/5.0 (Windows NT 6.3; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0]]></extraHeader>
+		<extraHeader><![CDATA[Referer#http://www.google.com/maps/]]></extraHeader>
+		<usage>photo</usage>
+	</provider>
+	<provider id="10022" type="0" visible="true" background="-1">
+		<name>Google</name>
+		<mode>Hybrid</mode>
+		<url><![CDATA[http://mt{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}]]></url>
+		<serverPart>0;1</serverPart>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>28</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<attribution><![CDATA[(c)2015 Google - Map data]]></attribution>
+		<extraHeader><![CDATA[User-Agent#Mozilla/5.0 (Windows NT 6.3; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0]]></extraHeader>
+		<extraHeader><![CDATA[Referer#http://www.google.com/maps/]]></extraHeader>
+		<usage>photo</usage>
+	</provider>
+	<provider id="10025" type="0" visible="true" background="-1">
+		<name>Google</name>
+		<mode>Terrain, Street</mode>
+		<url><![CDATA[http://mt{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}]]></url>
+		<serverPart>0;1</serverPart>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>23</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<attribution><![CDATA[(c)2015 Google - Map data]]></attribution>
+		<extraHeader><![CDATA[User-Agent#Mozilla/5.0 (Windows NT 6.3; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0]]></extraHeader>
+		<extraHeader><![CDATA[Referer#http://www.google.com/maps/]]></extraHeader>
+		<usage>road,city</usage>
+	</provider>
+	<provider id="10026" type="0" visible="true" background="-1">
+		<name>Google</name>
+		<mode>Bike</mode>
+		<url><![CDATA[http://mt1.google.com/vt/lyrs=m@121,bike&x={x}&y={y}&z={z}]]></url>
+		<serverPart>0;1</serverPart>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<attribution><![CDATA[(c)2011 Google - Map data (c)2011 Tele Atlas]]></attribution>
+		<extraHeader><![CDATA[User-Agent#Mozilla/5.0 (Windows NT 6.1; WOW64; rv:7.0.1) Gecko/20100101 Firefox/7.0.1]]></extraHeader>
+		<extraHeader><![CDATA[Referer#http://maps.google.com/]]></extraHeader>
+		<usage>cycle, city</usage>
+	</provider>
+
+	<!-- Bing maps  -->
+	<provider id="10054" type="5" visible="true" background="-1">
+		<name>Bing</name>
+		<mode>Satellite</mode>
+		<countries>World</countries>
+		<url><![CDATA[http://ecn.t0.tiles.virtualearth.net/tiles/a{c}.jpeg?g=604&mkt=en-us&n=z]]></url>
+		<zoomPart>25-{z}</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>25</zoomMax>
+		<tileSize>256</tileSize>
+		<extraHeader><![CDATA[Referer#http://www.bing.com/maps/]]></extraHeader>
+		<extraHeader><![CDATA[User-Agent#Mozilla/5.0 (Windows NT 6.1; WOW64; rv:7.0.1) Gecko/20100101 Firefox/7.0.1]]></extraHeader>
+		<usage>photo</usage>
+	</provider>
+
+	<!-- Waymarked Trails  -->
+	<provider id="10900" type="0" visible="true" background="-1">
+		<name>Waymarked Trails</name>
+		<mode>Hiking</mode>
+		<countries>World</countries>
+		<url><![CDATA[http://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>26</zoomMax>
+		<tileSize>256</tileSize>
+		<usage>overlay</usage>
+	</provider>
+
+	<provider id="10901" type="0" visible="true" background="-1">
+		<name>Waymarked Trails</name>
+		<mode>Cycling</mode>
+		<countries>World</countries>
+		<url><![CDATA[http://tile.waymarkedtrails.org/cycling/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>26</zoomMax>
+		<tileSize>256</tileSize>
+		<usage>overlay</usage>
+	</provider>
+
+	<provider id="10902" type="0" visible="true" background="-1">
+		<name>Waymarked Trails</name>
+		<mode>MTB</mode>
+		<countries>World</countries>
+		<url><![CDATA[http://tile.waymarkedtrails.org/mtb/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>26</zoomMax>
+		<tileSize>256</tileSize>
+		<usage>overlay</usage>
+	</provider>
+
+	<provider id="10903" type="0" visible="true" background="-1">
+		<name>Waymarked Trails</name>
+		<mode>Inline Skating</mode>
+		<countries>World</countries>
+		<url><![CDATA[http://tile.waymarkedtrails.org/skating/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>26</zoomMax>
+		<tileSize>256</tileSize>
+		<usage>overlay</usage>
+	</provider>
+
+	<provider id="10904" type="0" visible="true" background="-1">
+		<name>Waymarked Trails</name>
+		<mode>Horse Riding</mode>
+		<countries>World</countries>
+		<url><![CDATA[http://tile.waymarkedtrails.org/riding/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>26</zoomMax>
+		<tileSize>256</tileSize>
+		<usage>overlay</usage>
+	</provider>
+
+	<provider id="10905" type="0" visible="true" background="-1">
+		<name>Waymarked Trails</name>
+		<mode>Winter Sport Slopes</mode>
+		<countries>World</countries>
+		<url><![CDATA[http://tile.waymarkedtrails.org/slopes/{z}/{x}/{y}.png]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>26</zoomMax>
+		<tileSize>256</tileSize>
+		<usage>overlay,ski</usage>
+	</provider>
+
+
+</providers>

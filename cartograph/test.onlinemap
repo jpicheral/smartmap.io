@@ -1,0 +1,426 @@
+{
+	"version": 3,
+	"folders":[
+		{
+			"name": {
+				"default": "France"
+			},
+			"description": {
+				"default": ""
+			},
+			"folder_key":"",
+			"key":"France"
+		},
+		{
+			"name": {
+				"default": "Suisse"
+			},
+			"description": {
+				"default": ""
+			},
+			"folder_key":"",
+			"key":"Suisse"
+		},
+		{
+			"name": {
+				"default": "Espagne"
+			},
+			"description": {
+				"default": ""
+			},
+			"folder_key":"",
+			"key":"Espagne"
+		},
+		{
+			"name": {
+				"default": "Autriche"
+			},
+			"description": {
+				"default": ""
+			},
+			"folder_key":"",
+			"key":"Autriche"
+		}					
+	],
+	"maps": [
+		{
+			"name": {
+				"default": "Scan FR"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://data.geopf.fr/private/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&apikey=ign_scan_ws&LAYER=GEOGRAPHICALGRIDSYSTEMS.MAPS&STYLE=normal&FORMAT=image/jpeg&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}.jpg",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Scan FR",
+			"folder_key":"France"
+		},	
+		{
+			"name": {
+				"default": "Orthophoto FR"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&TILEMATRIXSET=PM&STYLE=normal&FORMAT=image/jpeg&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Orthophoto FR",
+			"folder_key":"France"
+		},	
+		{
+			"name": {
+				"default": "Plan FR"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&TILEMATRIXSET=PM&STYLE=normal&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Plan FR",
+			"folder_key":"France"
+		},			
+		{
+			"name": {
+				"default": "Pente FR"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://data.geopf.fr/wmts?Layer=GEOGRAPHICALGRIDSYSTEMS.SLOPES.MOUNTAIN&Style=normal&TileMatrixSet=PM&SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Pente FR",
+			"folder_key":"France"
+		},			
+
+		{
+			"name": {
+				"default": "Iti ski FR"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://data.geopf.fr/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&TileMatrixSet=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&Layer=TRACES.RANDO.HIVERNALE&FORMAT=image/png&Style=normal",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Iti ski FR",
+			"folder_key":"France"
+		},
+		{
+			"name": {
+				"default": "Scan CH"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Scan CH",
+			"folder_key":"Suisse"
+		},
+		{
+			"name": {
+				"default": "Pente CH"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.hangneigung-ueber_30/default/current/3857/{z}/{x}/{y}.png",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Pente CH",
+			"folder_key":"Suisse"
+		},
+		{
+			"name": {
+				"default": "Iti ski CH"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://wmts101.geo.admin.ch/1.0.0/ch.swisstopo-karto.skitouren/default/current/3857/{z}/{x}/{y}.png",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Iti ski CH",
+			"folder_key":"Suisse"
+		},
+		{
+			"name": {
+				"default": "Iti pedestre CH"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/current/3857/{z}/{x}/{y}.png",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Iti pedestre CH",
+			"folder_key":"Suisse"
+		},
+		{
+			"name": {
+				"default": "Iti VTT CH"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://wmts10.geo.admin.ch/1.0.0/ch.astra.mountainbikeland/default/current/3857/{z}/{x}/{y}.png",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Iti VTT CH",
+			"folder_key":"Suisse"
+		},
+		{
+			"name": {
+				"default": "Arret TP CH"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://wmts100.geo.admin.ch/1.0.0/ch.bav.haltestellen-oev/default/current/3857/{z}/{x}/{y}.png",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Arret TP CH",
+			"folder_key":"Suisse"
+		},
+		{
+			"name": {
+				"default": "Arret TP CH"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://wmts100.geo.admin.ch/1.0.0/ch.bav.haltestellen-oev/default/current/3857/{z}/{x}/{y}.png",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Arret TP CH",
+			"folder_key":"Suisse"
+		},
+		{
+			"name": {
+				"default": "Scan ES"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://ign.es/wmts/mapa-raster?layer=MTN&style=default&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image/jpeg&&TileMatrix={z}&TileCol={x}&TileRow={y}",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Scan ES",
+			"folder_key":"Espagne"
+		},
+		{
+			"name": {
+				"default": "Image ES"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://www.ign.es/wmts/pnoa-ma?layer=OI.OrthoimageCoverage&style=default&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image/jpeg&&TileMatrix={z}&TileCol={x}&TileRow={y}",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Image ES",
+			"folder_key":"Espagne"
+		},
+		{
+			"name": {
+				"default": "Scan Au"
+			},
+			"description": {
+				"default": ""
+			},
+			"type": "onlinemap",
+			"url": "https://maps.bev.gv.at/tiles/karte/{z}/{x}/{y}.png",
+			"attribution": "Â© IGN",
+			"defaultLatitude": 51.47,
+			"defaultLongitude": 0,
+			"defaultZoom": 1,
+			"minZoom": 0,
+			"maxZoom": 22,
+			"projection": "EPSG_4326",
+			"headers": [
+				{
+					"key": "User-Agent",
+					"value": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+				}
+			],
+			"unique_id": "Scan AU",
+			"folder_key":"Autriche"
+		},
+
+
+		]
+}
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- Doc de réf pour la syntaxe de ce fichier :
+https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
+-->
+
+<providers>  
+	
+
+	<!-- Strava --> 
+	<provider id="1400" type="0" visible="true" background="-1">
+		<name>Strava</name>
+		<mode>All</mode>
+		<url><![CDATA[https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/all/hot/{z}/{x}/{y}.png?px=256]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<usage>Superposition</usage>
+	</provider>
+	
+	<provider id="1401" type="0" visible="true" background="-1">
+		<name>Strava</name>
+		<mode>Run</mode>
+		<url><![CDATA[https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/run/hot/{z}/{x}/{y}.png?px=256]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<usage>Superposition</usage>
+	</provider>
+
+	<provider id="1402" type="0" visible="true" background="-1">
+		<name>Strava</name>
+		<mode>Velo</mode>
+		<url><![CDATA[https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/ride/hot/{z}/{x}/{y}.png?px=256]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<usage>Superposition</usage>
+	</provider>
+
+	<provider id="1403" type="0" visible="true" background="-1">
+		<name>Strava</name>
+		<mode>Ski</mode>
+		<url><![CDATA[https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/winter/hot/{z}/{x}/{y}.png?px=256]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<usage>Superposition</usage>
+	</provider>
+	
+	<provider id="1404" type="0" visible="true" background="-1">
+		<name>Strava</name>
+		<mode>VTT</mode>
+		<url><![CDATA[https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/sport_MountainBikeRide/hot/{z}/{x}/{y}.png?px=256]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<usage>Superposition</usage>
+	</provider>
+
+	<provider id="1405" type="0" visible="true" background="-1">
+		<name>Strava</name>
+		<mode>Gravel</mode>
+		<url><![CDATA[https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/sport_GravelRide/hot/{z}/{x}/{y}.png?px=256]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<usage>Superposition</usage>
+	</provider>
+
+	<provider id="1406" type="0" visible="true" background="-1">
+		<name>Strava</name>
+		<mode>Skirando</mode>
+		<url><![CDATA[https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/sport_BackcountrySki/hot/{z}/{x}/{y}.png?px=256]]></url>
+		<zoomPart>{z}-8</zoomPart>
+		<zoomMin>8</zoomMin>
+		<zoomMax>27</zoomMax>
+		<tileSize>256</tileSize>
+		<countries>World</countries>
+		<usage>Superposition</usage>
+	</provider>	
+	
+</providers>
