@@ -2,7 +2,7 @@
 <locusActions>
   <download>
 	<source>    
-		<![CDATA[http://jpicheral.free.fr/smartcarto/file/BasicLocusMap.xml]]>
+		<![CDATA[https://raw.githubusercontent.com/jpicheral/smartmap.io/refs/heads/main/locus/BasicLocusMap.xml]]>
     </source>
     <dest><![CDATA[/mapsOnline/custom/BasicLocusMap.xml]]></dest>
 	<after>refreshMap</after>
