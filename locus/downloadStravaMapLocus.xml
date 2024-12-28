@@ -4,7 +4,7 @@
 	<source>    
 		<![CDATA[https://raw.githubusercontent.com/jpicheral/smartmap.io/refs/heads/main/locus/StravaLocusMap.xml]]>
     </source>
-    <dest><![CDATA[/mapsOnline/custom/BasicLocusMap.xml]]></dest>
+    <dest><![CDATA[/mapsOnline/custom/StravaLocusMap.xml]]></dest>
 	<after>refreshMap</after>
   </download>
 </locusActions>
