@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Table from CSV</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Table from CSV</h1>
+  <table id="data-table"></table>
+
+  <script>
+    // Charger et afficher les données du CSV
+    const loadCSV = async () => {
+      const response = await fetch('data.csv'); // Charger le fichier CSV
+      const csvText = await response.text();
+      
+      Papa.parse(csvText, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          const table = document.getElementById('data-table');
+          const data = results.data;
+
+          // Générer les en-têtes
+          const headers = Object.keys(data[0]);
+          const headerRow = table.insertRow();
+          headers.forEach(header => {
+            const th = document.createElement('th');
+            th.textContent = header;
+            headerRow.appendChild(th);
+          });
+
+          // Générer les lignes de données
+          data.forEach(row => {
+            const rowElement = table.insertRow();
+            headers.forEach(header => {
+              const cell = rowElement.insertCell();
+              cell.textContent = row[header];
+            });
+          });
+        }
+      });
+    };
+
+    loadCSV();
+  </script>
+</body>
+</html>
