@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dynamic Table from CSV</title>
+  <title>Dynamic Table with Row Selection and Export</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
   <style>
     table {
@@ -19,42 +19,93 @@
   </style>
 </head>
 <body>
-  <h1>Dynamic Table from CSV</h1>
+  <h1>Dynamic Table with Selection and Export</h1>
+  
+  <!-- Bouton pour exporter les lignes sélectionnées -->
+  <button id="export-btn">Export Selected Rows</button>
+  
   <table id="data-table"></table>
 
   <script>
+    let globalData = []; // Stocker les données globalement
+
     // Charger et afficher les données du CSV
     const loadCSV = async () => {
       const response = await fetch('data.csv'); // Charger le fichier CSV
       const csvText = await response.text();
-      
+
       Papa.parse(csvText, {
         header: true,
         skipEmptyLines: true,
         complete: function(results) {
-          const table = document.getElementById('data-table');
-          const data = results.data;
-
-          // Générer les en-têtes
-          const headers = Object.keys(data[0]);
-          const headerRow = table.insertRow();
-          headers.forEach(header => {
-            const th = document.createElement('th');
-            th.textContent = header;
-            headerRow.appendChild(th);
-          });
-
-          // Générer les lignes de données
-          data.forEach(row => {
-            const rowElement = table.insertRow();
-            headers.forEach(header => {
-              const cell = rowElement.insertCell();
-              cell.textContent = row[header];
-            });
-          });
+          globalData = results.data; // Stocker les données globalement
+          populateTable(globalData);
         }
       });
     };
+
+    // Fonction pour peupler le tableau avec des cases à cocher
+    const populateTable = (data) => {
+      const table = document.getElementById('data-table');
+      table.innerHTML = ""; // Réinitialiser le tableau
+
+      // Générer les en-têtes
+      const headers = Object.keys(data[0]);
+      const headerRow = table.insertRow();
+      
+      // Ajouter une colonne pour la sélection
+      const selectHeader = document.createElement('th');
+      selectHeader.textContent = "Select";
+      headerRow.appendChild(selectHeader);
+      
+      headers.forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header;
+        headerRow.appendChild(th);
+      });
+
+      // Générer les lignes de données
+      data.forEach((row, index) => {
+        const rowElement = table.insertRow();
+        
+        // Ajouter une case à cocher
+        const checkboxCell = rowElement.insertCell();
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.dataset.rowIndex = index; // Ajouter l'index de la ligne
+        checkboxCell.appendChild(checkbox);
+        
+        headers.forEach(header => {
+          const cell = rowElement.insertCell();
+          cell.textContent = row[header];
+        });
+      });
+    };
+
+    // Fonction pour exporter les lignes sélectionnées
+    const exportSelectedRows = () => {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+      const selectedRows = Array.from(checkboxes).map(cb => globalData[cb.dataset.rowIndex]);
+
+      if (selectedRows.length === 0) {
+        alert("No rows selected!");
+        return;
+      }
+
+      // Convertir les données sélectionnées en CSV
+      const csvContent = Papa.unparse(selectedRows);
+
+      // Télécharger le fichier CSV
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'selected_rows.csv';
+      a.click();
+    };
+
+    // Ajouter un gestionnaire d'événement au bouton Export
+    document.getElementById('export-btn').addEventListener('click', exportSelectedRows);
 
     loadCSV();
   </script>
