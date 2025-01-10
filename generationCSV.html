@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XML to CSV Converter</title>
+</head>
+<body>
+  <h1>XML to CSV Converter</h1>
+  <p>Select an XML file to convert it into CSV format:</p>
+  <input type="file" id="xmlFile" accept=".xml">
+  <button id="convertBtn">Convert to CSV</button>
+  <a id="downloadLink" style="display: none;">Download CSV</a>
+
+  <script>
+    document.getElementById('convertBtn').addEventListener('click', () => {
+      const fileInput = document.getElementById('xmlFile');
+      const file = fileInput.files[0];
+
+      if (!file) {
+        alert('Please select an XML file first.');
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        const xmlData = event.target.result;
+
+        // Parse the XML data
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlData, 'application/xml');
+        const providers = xmlDoc.getElementsByTagName('provider');
+
+        // Convert XML to CSV data
+        const rows = [];
+        for (let provider of providers) {
+          const id = provider.getAttribute('id');
+          const type = provider.getAttribute('type');
+          const visible = provider.getAttribute('visible');
+          const required = provider.getAttribute('required');
+          const background = provider.getAttribute('background');
+          const name = provider.getElementsByTagName('name')[0].textContent;
+          const mode = provider.getElementsByTagName('mode')[0].textContent;
+          const url = provider.getElementsByTagName('url')[0].textContent;
+          const zoomPart = provider.getElementsByTagName('zoomPart')[0].textContent;
+          const zoomMin = provider.getElementsByTagName('zoomMin')[0].textContent;
+          const zoomMax = provider.getElementsByTagName('zoomMax')[0].textContent;
+          const tileSize = provider.getElementsByTagName('tileSize')[0].textContent;
+          const tileScale = provider.getElementsByTagName('tileScale')[0];
+          const tileScaleDpi = tileScale.getAttribute('dpi');
+          const tileScaleMulti = tileScale.getAttribute('multi');
+          const tileScaleReplace = tileScale.getAttribute('replace');
+          const extraHeader = provider.getElementsByTagName('extraHeader')[0]?.textContent || '';
+          const countries = provider.getElementsByTagName('countries')[0]?.textContent || '';
+          const usage = provider.getElementsByTagName('usage')[0]?.textContent || '';
+
+          rows.push([
+            id, type, visible, required, background, name, mode, url,
+            zoomPart, zoomMin, zoomMax, tileSize, tileScaleDpi,
+            tileScaleMulti, tileScaleReplace, extraHeader, countries, usage
+          ]);
+        }
+
+        // Generate CSV content
+        const csvContent = [
+          'id,type,visible,required,background,name,mode,url,zoomPart,zoomMin,zoomMax,tileSize,tileScaleDpi,tileScaleMulti,tileScaleReplace,extraHeader,countries,usage',
+          ...rows.map(row => row.join(','))
+        ].join('\n');
+
+        // Download CSV
+        const blob = new Blob([csvContent], { type: 'text/csv' });
+        const downloadLink = document.getElementById('downloadLink');
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = 'output.csv';
+        downloadLink.style.display = 'inline';
+        downloadLink.textContent = 'Download CSV';
+      };
+
+      reader.readAsText(file);
+    });
+  </script>
+</body>
+</html>
