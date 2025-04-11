@@ -16,7 +16,7 @@ https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
 		<zoomPart>{z}-8</zoomPart>
 		<zoomMin>8</zoomMin>
 		<zoomMax>27</zoomMax>
-		<tileSize>256</tileSize>
+		<tileSize>512</tileSize>
 		<countries>World</countries>
 		<usage>Superposition</usage>
 	</provider>
@@ -28,7 +28,7 @@ https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
 		<zoomPart>{z}-8</zoomPart>
 		<zoomMin>8</zoomMin>
 		<zoomMax>27</zoomMax>
-		<tileSize>256</tileSize>
+		<tileSize>512</tileSize>
 		<countries>World</countries>
 		<usage>Superposition</usage>
 	</provider>
@@ -40,7 +40,7 @@ https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
 		<zoomPart>{z}-8</zoomPart>
 		<zoomMin>8</zoomMin>
 		<zoomMax>27</zoomMax>
-		<tileSize>256</tileSize>
+		<tileSize>512</tileSize>
 		<countries>World</countries>
 		<usage>Superposition</usage>
 	</provider>
@@ -52,7 +52,7 @@ https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
 		<zoomPart>{z}-8</zoomPart>
 		<zoomMin>8</zoomMin>
 		<zoomMax>27</zoomMax>
-		<tileSize>256</tileSize>
+		<tileSize>512</tileSize>
 		<countries>World</countries>
 		<usage>Superposition</usage>
 	</provider>
@@ -64,7 +64,7 @@ https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
 		<zoomPart>{z}-8</zoomPart>
 		<zoomMin>8</zoomMin>
 		<zoomMax>27</zoomMax>
-		<tileSize>256</tileSize>
+		<tileSize>512</tileSize>
 		<countries>World</countries>
 		<usage>Superposition</usage>
 	</provider>
@@ -76,7 +76,7 @@ https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
 		<zoomPart>{z}-8</zoomPart>
 		<zoomMin>8</zoomMin>
 		<zoomMax>27</zoomMax>
-		<tileSize>256</tileSize>
+		<tileSize>512</tileSize>
 		<countries>World</countries>
 		<usage>Superposition</usage>
 	</provider>
@@ -88,7 +88,7 @@ https://docs.locusmap.eu/doku.php?id=manual:advanced:customization:online_maps
 		<zoomPart>{z}-8</zoomPart>
 		<zoomMin>8</zoomMin>
 		<zoomMax>27</zoomMax>
-		<tileSize>256</tileSize>
+		<tileSize>512</tileSize>
 		<countries>World</countries>
 		<usage>Superposition</usage>
 	</provider>	
