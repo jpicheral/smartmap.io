@@ -21,7 +21,7 @@
 				"default": ""
 			},
 			"type": "onlinemap",
-			"url": "https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/ride/red/{z}/{x}/{y}.png?px=256",
+			"url": "https://strava-heatmap-proxy.jpicheral.workers.dev/global/hot/ride/{z}/{x}/{y}.png?px=256",
 			"attribution": "Â© Strava.com",
 			"defaultLatitude": 51.47,
 			"defaultLongitude": 0,
