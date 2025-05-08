@@ -46,7 +46,7 @@
 				"default": ""
 			},
 			"type": "onlinemap",
-			"url": "https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/all/red/{z}/{x}/{y}.png?px=256",
+			"url": "https://strava-heatmap-proxy.jpicheral.workers.dev/global/hot/all/{z}/{x}/{y}.png?px=256",
 			"attribution": "Â© Strava.com",
 			"defaultLatitude": 51.47,
 			"defaultLongitude": 0,
@@ -71,7 +71,7 @@
 				"default": ""
 			},
 			"type": "onlinemap",
-			"url": "https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/run/red/{z}/{x}/{y}.png?px=256",
+			"url": "https://strava-heatmap-proxy.jpicheral.workers.dev/global/hot/run/{z}/{x}/{y}.png?px=256",
 			"attribution": "Â© Strava.com",
 			"defaultLatitude": 51.47,
 			"defaultLongitude": 0,
@@ -96,7 +96,7 @@
 				"default": ""
 			},
 			"type": "onlinemap",
-			"url": "https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/winter/red/{z}/{x}/{y}.png?px=256",
+			"url": "https://strava-heatmap-proxy.jpicheral.workers.dev/global/hot/winter/{z}/{x}/{y}.png?px=256",
 			"attribution": "Â© Strava.com",
 			"defaultLatitude": 51.47,
 			"defaultLongitude": 0,
@@ -121,7 +121,7 @@
 				"default": ""
 			},
 			"type": "onlinemap",
-			"url": "https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/sport_MountainBikeRide/red/{z}/{x}/{y}.png?px=256",
+			"url": "https://strava-heatmap-proxy.jpicheral.workers.dev/global/hot/sport_MountainBikeRide/{z}/{x}/{y}.png?px=256",
 			"attribution": "Â© Strava.com",
 			"defaultLatitude": 51.47,
 			"defaultLongitude": 0,
@@ -146,7 +146,7 @@
 				"default": ""
 			},
 			"type": "onlinemap",
-			"url": "https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/sport_GravelRide/red/{z}/{x}/{y}.png?px=256",
+			"url": "https://strava-heatmap-proxy.jpicheral.workers.dev/global/hot/sport_GravelRide/{z}/{x}/{y}.png?px=256",
 			"attribution": "Â© Strava.com",
 			"defaultLatitude": 51.47,
 			"defaultLongitude": 0,
@@ -171,7 +171,7 @@
 				"default": ""
 			},
 			"type": "onlinemap",
-			"url": "https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/sport_BackcountrySki/red/{z}/{x}/{y}.png?px=256",
+			"url": "https://strava-heatmap-proxy.jpicheral.workers.dev/global/hot/sport_BackcountrySki/{z}/{x}/{y}.png?px=256",
 			"attribution": "Â© Strava.com",
 			"defaultLatitude": 51.47,
 			"defaultLongitude": 0,
